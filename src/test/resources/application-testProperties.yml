@@ -1,0 +1,9 @@
+schoolClub:
+  clubName: Клуб любителей литературы
+  members:
+    - name: Моника
+      age: 17
+    - name: Саёри
+      age: 16
+    - name: Юра
+      age: 18
