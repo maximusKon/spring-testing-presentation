@@ -11,4 +11,7 @@ public class RockBand {
 
     String name;
 
+    public RockBand(String name) {
+        this(0, name);
+    }
 }
