@@ -26,7 +26,7 @@ public class SimpleService {
     }
 
     private String formMessage(SomeData somedata) {
-        return String.format("First Line with '%s' value\n", somedata.getSomeIntField()) +
-                String.format("Second Line with '%s' value", somedata.getSomeStringField());
+        return String.format("<intField>%s</intField>\n", somedata.getSomeIntField()) +
+                String.format("<stringField>%s</stringField>", somedata.getSomeStringField());
     }
 }

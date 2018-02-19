@@ -28,7 +28,9 @@ public class SimpleServiceTest {
 
         simpleService.sendSomeData(testData);
 
-        val expectedMessage = "First Line with '42' value\nSecond Line with 'The Answer' value";
+        val expectedMessage =
+                "<intField>42</intField>\n" +
+                        "<stringField>The Answer</stringField>";
         verify(externalSystem).sendMessage(expectedMessage);
     }
 }
