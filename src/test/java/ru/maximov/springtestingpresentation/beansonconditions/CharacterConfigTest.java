@@ -3,21 +3,17 @@ package ru.maximov.springtestingpresentation.beansonconditions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
-import ru.maximov.springtestingpresentation.configproperties.SchoolClubPropertiesConfig;
 
-import static org.hamcrest.Matchers.isA;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 
 public class CharacterConfigTest {
 
     @RunWith(SpringRunner.class)
-    @SpringBootTest(classes = {CharacterConfig.class})
-    @SpringBootApplication
+    @ContextConfiguration(classes = {CharacterConfig.class})
     @ActiveProfiles("disableIronMan")
     public static class CharacterConfigTestDisableIronManProfile {
 
@@ -34,8 +30,7 @@ public class CharacterConfigTest {
     }
 
     @RunWith(SpringRunner.class)
-    @SpringBootTest(classes = {CharacterConfig.class})
-    @SpringBootApplication
+    @ContextConfiguration(classes = {CharacterConfig.class})
     public static class CharacterConfigTestDefaultProfile {
 
         @Autowired
@@ -51,8 +46,7 @@ public class CharacterConfigTest {
     }
 
     @RunWith(SpringRunner.class)
-    @SpringBootTest(classes = {CharacterConfig.class})
-    @SpringBootApplication
+    @ContextConfiguration(classes = {CharacterConfig.class})
     @ActiveProfiles("mockCharacter")
     public static class CharacterConfigTestMockCharacterProfile {
 
@@ -69,8 +63,7 @@ public class CharacterConfigTest {
     }
 
     @RunWith(SpringRunner.class)
-    @SpringBootTest(classes = {CharacterConfig.class})
-    @SpringBootApplication
+    @ContextConfiguration(classes = {CharacterConfig.class})
     @ActiveProfiles(value = {"disableIronMan", "mockCharacter"})
     public static class CharacterConfigTestMockDisableIronManAndCharacterProfile {
 
